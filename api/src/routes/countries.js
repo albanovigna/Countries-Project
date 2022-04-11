@@ -22,10 +22,10 @@ router.get("/", async (req, res) => {
         return {
           idName: element.cca3,
           name: element.name.common,
-          flagImg: element.flags[0],
-          continent: element.region,
+          flagImg: element.flags[1],
+          continent: element.continents[0],
           capital: element.capital ? element.capital[0] : "Not found",
-          subregion: element.subregion,
+          subregion: element.subregion ? element.subregion : "Not Found",
           area: Math.round(element.area),
           population: element.population,
         };
@@ -46,44 +46,39 @@ router.get("/", async (req, res) => {
           console.log("Error");
         }
       });
-      res.status(200).send("Loading DB success");
+      res.status(200).send(dbData);
     } else {
-      res.send("DB already charged");
+      try {
+        const { name } = req.query;
+        if (name) {
+          const countryName = await dbData.filter((element) =>
+            element.name.toLowerCase().includes(name.toLowerCase())
+          );
+          countryName.length
+            ? res.status(200).send(countryName)
+            : res.status(404).send("No se encontro el pais");
+        } else {
+          res.status(200).send(dbData);
+        }
+      } catch {
+        res.status(500).send("Server error");
+      }
     }
   } catch {
     console.log("Error loading DB");
   }
 });
 
-router.get("/countries", async (req, res) => {
+router.get("/:idCountry", async (req, res) => {
   try {
     const dbData = await getCountriesFromDb();
-    const { name } = req.query;
-    if (name) {
-      const countryName = await dbData.filter((element) =>
-        element.name.toLowerCase().includes(name.toLowerCase())
-      );
-      countryName.length
-        ? res.status(200).send(countryName)
-        : res.status(404).send("No se encontro el pais");
-    } else {
-      res.status(200).send(dbData);
-    }
-  } catch {
-    res.status(500).send("Server error");
-  }
-});
-
-router.get("/countries/:idPais", async (req, res) => {
-  try {
-    const dbData = await getCountriesFromDb();
-    const { idPais } = req.params;
-    const id = await dbData.filter((element) => element.idName === idPais);
+    const { idCountry } = req.params;
+    const id = await dbData.filter((element) => element.idName === idCountry);
     id.length
       ? res.send(id)
-      : res.status(400).json({ msg: "El país no existe" });
+      : res.status(400).json({ msg: "Country does not exist" });
   } catch {
-    res.status(500).send("Error al encontrar país por ID");
+    res.status(500).send("Error found ID");
   }
 });
 

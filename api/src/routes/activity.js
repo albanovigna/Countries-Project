@@ -1,25 +1,37 @@
 const { Router } = require("express");
 const { Activity, Country } = require("../db");
 const router = Router();
-const axios = require("axios");
 
-router.post("/activity", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const { name, difficulty, duration, season, countries } = req.body;
+    const infoDb = await Activity.findAll({
+      attibute: ["id"],
+    });
+    res.status(200).send(infoDb);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.post("/", async (req, res) => {
+  try {
+    const { name, difficulty, duration, season, countriesInActivity } =
+      req.body;
     const newActivity = await Activity.create({
       name: name,
       difficulty: difficulty,
       duration: duration,
       season: season,
     });
-    countries.map(async (countryId) => {
+    countriesInActivity.map(async (countryId) => {
       const foundCountry = await Country.findAll({
-        where: { id: countryId },
+        where: { idName: countryId },
       });
       if (foundCountry) newActivity.addCountries(foundCountry);
     });
     res.status(200).send("Activity added correctly");
-  } catch {
+  } catch (e) {
+    console.log(e);
     res.status(400).send("Error at creating activity ");
   }
 });
