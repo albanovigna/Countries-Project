@@ -1,0 +1,114 @@
+
+.container{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+
+.paginationUl{
+  display: flex;
+  position: absolute;
+  background: #fff;
+   padding: 8px;
+  border-radius: 50px;
+  bottom: 45%;
+  height: 45px;
+}
+
+.paginationUl li{
+  color: #20B2AA;
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0px 10px 0 10px;
+  /* user-select: none; 
+  transition: all 0.3s ease; */
+}
+
+.paginationUl li.numb{
+  list-style: none;
+  height: 45px;
+  width: 45px;
+  margin: 0 5px;
+  line-height: 45px; 
+  border-radius: 50%;
+}
+
+.paginationUl li.first{
+  margin: 0px 3px 0 -5px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.paginationUl li.last{
+  margin: 0px -5px 0 3px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.paginationUl li.dots{
+  font-size: 22px;
+  cursor: default;
+  margin: 0px 5px 0 3px;
+}
+
+.paginationUl li button.buttonPrev{
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  padding: 0 20px;
+  border-radius: 25px 5px 5px 25px;
+  width: 90px;
+  height: 45px;
+}
+
+/* .paginationUl li button h4{
+  position: relative;
+  bottom:70px;
+  left: 30px;
+} */
+
+.paginationUl li button.buttonNext{
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  padding: 0 20px;
+  border-radius: 5px 25px 25px 5px;
+  width: 90px;
+  height: 45px;
+}
+
+
+.paginationUl li.active {
+  background-color: white;
+  color: black;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.paginationUl li.active,
+.paginationUl li.numb:hover,
+.paginationUl li button.buttonPrev:hover,
+.paginationUl li button.buttonNext:hover,
+.paginationUl li.first:hover,
+.paginationUl li.last:hover{
+  color: #fff;
+  background: #20B2AA;
+}

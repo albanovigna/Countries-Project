@@ -1,0 +1,136 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkHome{
+    position: absolute;
+    top:10%;
+}
+
+.linkHome button {
+    position: relative;
+    top: 15px;
+    appearance: button;
+ background-color: #005F73;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 13px 19px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+  }
+
+ .linkHome button:after {
+    background-clip: padding-box;
+    background-color: #0A9396;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+   }
+   
+   .linkHome button:main, button:focus {
+    user-select: auto;
+   }
+   
+   .linkHome button:hover:not(:disabled) {
+    filter: brightness(1.1);
+   }
+   
+   .linkHome button:disabled {
+    cursor: auto;
+   }
+   
+   .linkHome button:active:after {
+    border-width: 0 0 0px;
+   }
+   
+   .linkHome button:active {
+    padding-bottom: 10px;
+   }
+
+.activityImg{
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:15%;
+}
+
+.form input{
+    width: 100%;
+    margin: 20px;
+}
+
+.select{
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin: 5%;
+    cursor: pointer;
+}
+
+.listCountries{
+   list-style: none;
+}
+
+.containerCountries {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    left: 100%;
+    bottom: 5%;
+}
+
+.error{
+    margin-top: -2px;
+    color: #EE9B00;
+    font-size: 1.3rem;
+}

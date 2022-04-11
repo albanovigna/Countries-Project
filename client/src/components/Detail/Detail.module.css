@@ -1,0 +1,275 @@
+.principalContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:15%;
+    left: 30%;
+}
+
+.backImage{
+  min-height: 100%;
+  min-width: 1024px;
+    
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+    
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 780px;
+	height: 700px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+  }
+
+.flipBox{
+  position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: all 0.5s ease-in-out;
+	z-index: 1;
+}  
+
+.flipBox .front,
+.flipBox .back {
+  position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+	/* background-color: #fff; */
+	backface-visibility: hidden;
+	border-radius: 0 20px 0 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  backdrop-filter: blur(14px);
+
+  /* margin-right: auto;
+  margin-left: auto;
+  width: 650px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  height: 600px;
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: center; */
+}
+
+.flipBox .back{
+  transform: rotateX(180deg);
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  font-size: 1.2rem;
+}
+
+/* .container:hover .flipBox{
+  transform: rotateX(2deg);
+	box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
+} */
+
+.inputDetail{
+  display: none;
+}
+
+:checked + .flipBox {
+	transform: rotateX(180deg);
+}
+
+/* .container:hover :checked + .flipBox{
+  transform: rotateX(175deg);
+	box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
+} */
+
+.flag {
+  width: 300px;
+  height: 200px;
+}
+
+.front h2{
+  font-size: 30px;
+	/* color: #499bef; */
+	margin: 0;
+  color: #fff;
+}
+
+.front h3{
+  font-size: 18px;
+	color: #fff;
+	margin: 12px 0 12px 0;
+}
+
+.front h4{
+  font-size: 1.1rem;
+	color: #fff;
+	margin: 0 0 35px 0;
+	display: block;
+}
+
+.countryLocation{
+  /* background-color: red; */
+  position: relative;
+  width: 30%;
+  float: left;
+  top: 40%;
+  left: 5%;
+  
+}
+
+
+.geography{
+  /* background-color: red; */
+  position: relative;
+  width: 30%;
+  float: right;
+  top: 45%;
+  right: 5%;
+  
+}
+
+.front p{
+  position: relative;
+  top: 45%;
+  right: 15%;
+  font-size: 1.5rem;
+}
+/* 
+.front {
+    margin-right: auto;
+    margin-left: auto;
+    width: 650px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    height: 600px;
+    border-radius: 5px;
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    text-align: center;
+  } */
+.back{
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  backdrop-filter: blur(14px);
+
+}
+
+.back ul li{
+  display: inline;
+  margin: 5px;
+  }  
+
+  .back .noCountryContainer{
+    position: absolute;
+    color: red;
+  }
+
+  /* .linkHome{
+      position: absolute;
+      bottom: 110%; 
+      left: 5px;
+  }  */
+
+  .linkActivity{
+    position: absolute;
+    color: #000;
+    left: 325px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.5s;
+    padding: 5px;
+    border-bottom: 2px solid #EE9B00;
+  }
+  .linkActivity:hover{ 
+    transform: scale(1.2);
+   }
+
+
+.linkHome button {
+  position: relative;
+  top: 15px;
+  appearance: button;
+background-color: #CA6702;
+border: solid transparent;
+border-radius: 16px;
+border-width: 0 0 4px;
+box-sizing: border-box;
+color: #000;
+cursor: pointer;
+display: inline-block;
+font-size: 15px;
+font-weight: 700;
+letter-spacing: .8px;
+line-height: 20px;
+margin: 0;
+outline: none;
+overflow: visible;
+padding: 13px 19px;
+text-align: center;
+text-transform: uppercase;
+touch-action: manipulation;
+transform: translateZ(0);
+transition: filter .2s;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: middle;
+white-space: nowrap;
+}
+
+.linkHome button:after {
+  background-clip: padding-box;
+  background-color: #EE9B00;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+ }
+ 
+ .linkHome button:main, button:focus {
+  user-select: auto;
+ }
+ 
+ .linkHome button:hover:not(:disabled) {
+  filter: brightness(1.1);
+ }
+ 
+ .linkHome button:disabled {
+  cursor: auto;
+ }
+ 
+ .linkHome button:active:after {
+  border-width: 0 0 0px;
+ }
+ 
+ .linkHome button:active {
+  padding-bottom: 10px;
+ }
+
+
+  .loadingContainer{
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+  }
+
+ 

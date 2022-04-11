@@ -1,0 +1,65 @@
+.container{
+  /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #001219;
+    color: #ddd;
+  }
+  
+  .title {
+    cursor: pointer;
+    margin-right: 200px;
+  }
+  
+  
+  .createActivity {
+    position: relative;
+    left: 5%;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 9px;
+    background: #EE9B00;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  
+  .buttonActivities:hover {
+    box-shadow: 7px 5px 56px -14px #c3d900;
+  }
+  
+  .buttonActivities:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #c3d900;
+  }
+  
+  .link{
+    position: relative;
+    left: 35px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.5s;
+  }
+  .link:hover{ 
+    transform: scale(1.2);
+   }
+  
+  .searchBox {
+    float: right;
+    /* position: absolute; */
+    bottom: 40px;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 100px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
