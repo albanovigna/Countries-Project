@@ -7,7 +7,6 @@ import s from "./Card.module.css";
 function Card(props) {
   const url = props.img;
   return (
-    // <div className={s.container} style={{ backgroundImage: `url(${url})` }}>
     <div className={s.container}>
       <div className={s.imgContainer}>
         <img className={s.flag} src={props.img}></img>

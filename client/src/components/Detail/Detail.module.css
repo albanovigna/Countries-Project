@@ -10,12 +10,8 @@
 .backImage{
   min-height: 100%;
   min-width: 1024px;
-    
-  /* Set up proportionate scaling */
   width: 100%;
   height: auto;
-    
-  /* Set up positioning */
   position: fixed;
   top: 0;
   left: 0;
@@ -51,23 +47,11 @@
 	text-align: center;
   margin-right: auto;
   margin-left: auto;
-	/* background-color: #fff; */
 	backface-visibility: hidden;
 	border-radius: 0 20px 0 20px;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
-
-  /* margin-right: auto;
-  margin-left: auto;
-  width: 650px;
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  height: 600px;
-  border-radius: 5px;
-  backdrop-filter: blur(14px);
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 10px;
-  text-align: center; */
 }
 
 .flipBox .back{
@@ -78,10 +62,6 @@
   font-size: 1.2rem;
 }
 
-/* .container:hover .flipBox{
-  transform: rotateX(2deg);
-	box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
-} */
 
 .inputDetail{
   display: none;
@@ -91,11 +71,6 @@
 	transform: rotateX(180deg);
 }
 
-/* .container:hover :checked + .flipBox{
-  transform: rotateX(175deg);
-	box-shadow: 0 20px 20px rgba(255, 255, 255, 0.2);
-} */
-
 .flag {
   width: 300px;
   height: 200px;
@@ -103,7 +78,6 @@
 
 .front h2{
   font-size: 30px;
-	/* color: #499bef; */
 	margin: 0;
   color: #fff;
 }
@@ -122,7 +96,6 @@
 }
 
 .countryLocation{
-  /* background-color: red; */
   position: relative;
   width: 30%;
   float: left;
@@ -131,9 +104,7 @@
   
 }
 
-
 .geography{
-  /* background-color: red; */
   position: relative;
   width: 30%;
   float: right;
@@ -148,19 +119,7 @@
   right: 15%;
   font-size: 1.5rem;
 }
-/* 
-.front {
-    margin-right: auto;
-    margin-left: auto;
-    width: 650px;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-    height: 600px;
-    border-radius: 5px;
-    backdrop-filter: blur(14px);
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    text-align: center;
-  } */
+
 .back{
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
@@ -178,11 +137,7 @@
     color: red;
   }
 
-  /* .linkHome{
-      position: absolute;
-      bottom: 110%; 
-      left: 5px;
-  }  */
+
 
   .linkActivity{
     position: absolute;
@@ -267,7 +222,7 @@ white-space: nowrap;
 
 
   .loadingContainer{
-    position: fixed; /* or absolute */
+    position: fixed; 
     top: 50%;
     left: 50%;
   }

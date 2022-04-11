@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: red; */
   width: 30%;
   position: relative;
   left: 50px;
-  /* position: absolute; */
 }
 
 .searchBar {
@@ -18,7 +16,6 @@
   align-items: center;
   border-radius: 60px;
   padding: 10px 20px;
-  /* margin: 10px; */
   margin-left: 150px;
   backdrop-filter: blur(4px) saturate(180%);
 }
@@ -51,21 +48,17 @@
 }
 
 .resetButton {
-  background-color: #AE2012; /* Green */
+  background-color: #AE2012; 
   border: none;
   color: #fff;
   width: 150px;
   height: 4vh;
-  /* padding: 0px; */
   margin-left: 10px;
   text-align: center;
   text-decoration: none;
-  /* display: inline-block; */
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  /* #04aa4c */
-  /* 04aa6d */
 }
 
 .resetButton:hover {

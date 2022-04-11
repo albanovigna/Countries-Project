@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCountriesById, removeDetail } from "../../actions";
 import { Link } from "react-router-dom";
-// import Loading from "../Spinner/Spinner";
 import s from "../Detail/Detail.module.css";
 import Spinner from "../Spinner/Spinner";
 
@@ -34,7 +33,6 @@ function Detail() {
             <input className={s.inputDetail} type="checkbox" />
             <div className={s.flipBox}>
               <div className={s.front}>
-                {/* <h2>COUNTRY DETAILS</h2> */}
                 <h2>{detail[0].name}</h2>
                 <h4>Id: {detail[0].idName}</h4>
                 <img className={s.flag} src={detail[0].flagImg} alt="" />
@@ -68,11 +66,9 @@ function Detail() {
                     <div>
                       <p>This country no have activities :c</p>
                       <p>Create one if you want!</p>
-                      {/* <button className={s.createActivity}> */}
                       <Link className={s.linkActivity} to="/activity">
                         Create Activity
                       </Link>
-                      {/* </button> */}
                     </div>
                   ) : null}
                 </div>

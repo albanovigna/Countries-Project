@@ -1,5 +1,4 @@
 .container{
-  /* position: absolute; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +52,6 @@
   
   .searchBox {
     float: right;
-    /* position: absolute; */
     bottom: 40px;
     padding: 6px;
     margin-top: 8px;

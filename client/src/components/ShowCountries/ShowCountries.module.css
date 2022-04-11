@@ -1,11 +1,4 @@
 .countriesContainer {
-  /* margin-top: 5%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 100px;
-  justify-items: center; */
   display: grid;
   place-content: center;
   gap: 100px;

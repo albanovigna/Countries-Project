@@ -24,7 +24,6 @@ function LandingPage() {
           src="https://images.vexels.com/media/users/3/145795/isolated/preview/05cd33059a006bf49006097af4ccba98-plane-in-flight-by-vexels.png"
         />
       </div>
-      {/* <span className={s.textContainer}>Discover all the countries</span> */}
       <img
         src="https://i.pinimg.com/originals/20/cb/f3/20cbf31ecf279ccab1a3264a2cec80c6.jpg"
         alt="country-img"

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries, getActivities } from "../../actions";
-import { Link } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar";
 import Pagination from "../Pagination/Pagination";
 import s from "../Countries/Countries.module.css";
 import Filters from "../Filters/Filters";
@@ -31,20 +29,12 @@ function Countries() {
     lastCountryIndex
   );
 
-  const pagination = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
   useEffect(() => {
     if (!countries.length) {
       dispatch(getCountries());
       dispatch(getActivities());
     }
   }, [countries, activities]);
-  // useEffect(() => {
-  //   dispatch(getCountries());
-  //   dispatch(getActivities());
-  // }, []);
 
   return (
     <div className={s.container}>
@@ -58,13 +48,11 @@ function Countries() {
           <div className={s.navContainer}>
             <NavBar setCurrentPage={setCurrentPage} />
           </div>
-          {/* <div className={s.filtersContainer}> */}
           <Filters
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setOrder={setOrder}
           />
-          {/* </div> */}
           <div className={s.countriesContainer}>
             <ShowCountries currentCountries={currentCountries} />
           </div>
@@ -75,7 +63,6 @@ function Countries() {
               setCurrentPage={setCurrentPage}
               allCountries={filterCountries}
               lastCountryIndex={lastCountryIndex}
-              pagination={pagination}
             />
           </div>
         </div>

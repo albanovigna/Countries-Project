@@ -1,30 +1,15 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-// import Card from "../Card/Card";
-// import ShowCountries from "../ShowCountries/ShowCountries";
 import "font-awesome/css/font-awesome.min.css";
 import s from "../Pagination/Pagination.module.css";
 
 function Pagination({
   countriesPerPage,
   allCountries,
-  pagination,
   currentPage,
   lastCountryIndex,
   setCurrentPage,
 }) {
-  // let allCountries = [...filterCountries];
-
   const pageNumbers = [];
-
-  // const [countriesPerPage] = useState(9);
-  // const lastCountryIndex = currentPage * countriesPerPage;
-  // const firstCountryIndex = lastCountryIndex - countriesPerPage;
-  // const currentCountries = allCountries.slice(
-  //   firstCountryIndex,
-  //   lastCountryIndex
-  // );
-
   const [pageNumberLimit, setPageNumberLimit] = useState(5);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
@@ -89,14 +74,14 @@ function Pagination({
     }
   });
 
-  let pageDecrementButton = null;
+  let pageDecrementDots = null;
   if (currentPage > pageNumberLimit) {
-    pageDecrementButton = <li className={s.dots}>...</li>;
+    pageDecrementDots = <li className={s.dots}>...</li>;
   }
 
-  let pageIncrementButton = null;
+  let pageIncrementDots = null;
   if (pageNumbers.length > maxPageNumberLimit) {
-    pageIncrementButton = <li className={s.dots}>...</li>;
+    pageIncrementDots = <li className={s.dots}>...</li>;
   }
 
   let showFirstNumber = null;
@@ -139,13 +124,13 @@ function Pagination({
               disabled={currentPage - 1 === 0 ? true : false}
             >
               <i className={"fa fa-angle-left"}></i>
-              {/* <h4>prev</h4> */}prev
+              prev
             </button>
           </li>
           {showFirstNumber}
-          {pageDecrementButton}
+          {pageDecrementDots}
           {renderPageNumbers}
-          {pageIncrementButton}
+          {pageIncrementDots}
           {showLastNumber}
           <li>
             <button
@@ -159,7 +144,6 @@ function Pagination({
           </li>
         </ul>
       </div>
-      {/* <ShowCountries currentCountries={currentCountries} /> */}
     </>
   );
 }
