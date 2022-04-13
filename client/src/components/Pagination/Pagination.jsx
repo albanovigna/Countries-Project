@@ -53,7 +53,7 @@ function Pagination({
   };
 
   if (maxPageNumberLimit > lastCountryIndex) {
-    setMaxPageNumberLimit(5);
+    setMaxPageNumberLimit(5); //Condicional para que no se pierda el puntero del paginado
     setMinPageNumberLimit(0);
   }
 
