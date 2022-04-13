@@ -24,11 +24,6 @@ describe("<Nav />", () => {
     expect(nav.find(Link).at(0).text()).toEqual("Create Activity");
   });
 
-  //   it('Debería tener un segundo Link, con texto "Create Pokemon" y que cambie la ruta hacia "/house/create"', () => {
-  //     expect(nav.find(Link).at(1).prop("to")).toEqual("/pokemon/create");
-  //     expect(nav.find(Link).at(1).text()).toEqual("Create Pokemon");
-  //   });
-
   it('Debería tener un h1 con una clase "title" para mostrar el logo"', () => {
     expect(nav.find("h1.title").length).toBeGreaterThanOrEqual(1);
   });

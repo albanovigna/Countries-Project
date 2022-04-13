@@ -30,6 +30,9 @@ function Activity() {
       ...newActivity,
       [e.target.name]: e.target.value,
     });
+    setErrorsValue(
+      validateValue({ ...newActivity, [e.target.name]: e.target.value })
+    );
   };
 
   const handleSelect = (e) => {
@@ -38,6 +41,9 @@ function Activity() {
       ...newActivity,
       [e.target.name]: e.target.value,
     });
+    setErrorsValue(
+      validateValue({ ...newActivity, [e.target.name]: e.target.value })
+    );
   };
 
   const handleSelectCountries = (e) => {
@@ -55,6 +61,15 @@ function Activity() {
           e.target.value,
         ],
       });
+      setErrorsValue(
+        validateValue({
+          ...newActivity,
+          countriesInActivity: [
+            ...newActivity.countriesInActivity,
+            e.target.value,
+          ],
+        })
+      );
       console.log(newActivity);
     }
   };
@@ -182,6 +197,7 @@ function Activity() {
           })}
         </select>
         <div className={s.containerCountries}>
+          <p>Selected Countries</p>
           <ul className={s.listCountries}>
             {newActivity.countriesInActivity.map((c) => {
               let name = allCountries.map((country) =>
@@ -192,7 +208,7 @@ function Activity() {
                   <li key={c.id}>{name}</li>
                   <button
                     name={c}
-                    className="closeButton"
+                    className={s.closeBtn}
                     onClick={(e) => {
                       removeCountry(e);
                     }}
@@ -207,7 +223,9 @@ function Activity() {
         {errorsValue.countriesInActivity && (
           <p className={s.error}>{errorsValue.countriesInActivity}</p>
         )}
-        <button type="submit">Submit</button>
+        <button className={s.submitFormBtn} type="submit">
+          <span>Submit</span>
+        </button>
       </form>
     </div>
   );

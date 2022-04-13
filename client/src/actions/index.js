@@ -27,17 +27,6 @@ export const getCountriesByName = (name) => {
   };
 };
 
-// export const getCountriesByName = (name) => {
-//   return (dispatch) => {
-//     axios
-//       .get("http://localhost:3001/countries?name=" + name)
-//       .then((json) => {
-//         dispatch({ type: GET_COUNTRIES_BY_NAME, payload: json.data });
-//       })
-//       .catch((e) => console.log(e));
-//   };
-// };
-
 export const getCountriesById = (id) => {
   return async (dispatch) => {
     const json = await axios.get("http://localhost:3001/countries/" + id);
@@ -51,16 +40,6 @@ export const getActivities = () => {
     dispatch({ type: GET_ACTIVITIES, payload: json.data });
   };
 };
-
-// export const createActivity = (payload) => {
-//   return async function (dispatch) {
-//     return await axios
-//       .post(`http://localhost:3001/activity`, payload)
-//       .then((res) => {
-//         dispatch({ type: CREATE_ACTIVITY, payload });
-//       });
-//   };
-// };
 
 export const createActivity = (payload) => {
   return async function () {

@@ -52,11 +52,11 @@
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
+  color:rgb(43, 42, 42);
 }
 
 .flipBox .back{
   transform: rotateX(180deg);
-	color: #fff;
 	background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   font-size: 1.2rem;
@@ -79,18 +79,18 @@
 .front h2{
   font-size: 30px;
 	margin: 0;
-  color: #fff;
+  
 }
 
 .front h3{
   font-size: 18px;
-	color: #fff;
+	
 	margin: 12px 0 12px 0;
 }
 
 .front h4{
   font-size: 1.1rem;
-	color: #fff;
+	
 	margin: 0 0 35px 0;
 	display: block;
 }
@@ -118,13 +118,14 @@
   top: 45%;
   right: 15%;
   font-size: 1.5rem;
+  color: #000;
 }
 
 .back{
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
-
+  color:rgb(43, 42, 42);
 }
 
 .back ul li{

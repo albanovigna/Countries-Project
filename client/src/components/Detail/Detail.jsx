@@ -51,14 +51,14 @@ function Detail() {
               </div>
               <div className={s.back}>
                 <div className={s.activities}>
-                  {detail[0].activities.map((a) => {
+                  {detail[0].activities.map((a, index) => {
                     return (
                       <ul className={s.ulActivities}>
-                        <li>Name:{a.name}</li>
-                        <li>Id:{a.id}</li>
-                        <li>Difficulty:{a.difficulty}</li>
-                        <li>Duration:{a.duration}</li>
-                        <li>Season:{a.season}</li>
+                        <li>{index + 1}) </li>
+                        <li>Name: {a.name}</li>
+                        <li>Difficulty: {a.difficulty}</li>
+                        <li>Duration: {a.duration} hs</li>
+                        <li>Season: {a.season}</li>
                       </ul>
                     );
                   })}
