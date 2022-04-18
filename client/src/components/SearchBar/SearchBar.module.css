@@ -105,4 +105,17 @@
     position: relative;
     top: -5vh;
   }
+  .resetButton {
+    width: 5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    position: relative;
+    top: -10vh;
+  }
+  .resetButton {
+    width: 10%;
+  }
 }
