@@ -131,7 +131,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     bottom: 5vh;
     width: 100%;
     margin-top: 100px;
@@ -154,5 +153,29 @@
   }
   .activities {
     width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0vh;
+    /* width: 100%; */
+    margin-top: 100px;
+  }
+  .selectContainer {
+    /* width: 100%; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 0vh;
+    right: 0;
+    padding: 0%;
+    margin: 5%;
   }
 }

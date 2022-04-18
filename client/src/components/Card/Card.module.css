@@ -342,12 +342,12 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
   }
   .flag {
     width: 100%;
-    max-height: 200px;
+    max-height: 300px;
     position: absolute;
     top: 0;
     left: 0;

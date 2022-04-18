@@ -13,7 +13,7 @@
   align-items: center;
   border-radius: 60px;
   padding: 10px 20px;
-  margin-left: 150px;
+  margin-left: 0px;
   backdrop-filter: blur(4px) saturate(180%);
 }
 
@@ -112,10 +112,16 @@
 
 @media (min-width: 1024px) {
   .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    top: -10vh;
+    top: 5vh;
   }
+
   .resetButton {
-    width: 10%;
+    width: 45px;
+    height: 45px;
   }
 }

@@ -23,6 +23,8 @@
 }
 
 .filtersContainer {
+  width: 100%;
+  /* background-color: red; */
   position: relative;
   display: flex;
   justify-content: center;
