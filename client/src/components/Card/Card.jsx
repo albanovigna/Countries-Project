@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import image from "./placeholder.png";
 import image2 from "./team.png";
 import s from "./Card.module.css";
+import "font-awesome/css/font-awesome.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faPeopleGroup,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Card(props) {
   const url = props.img;
@@ -17,10 +23,20 @@ function Card(props) {
         </div>
         <hr />
         <div className={s.otherInfo}>
-          <img className={s.location} src={image} alt="location-icon" />
-          <h4 className={s.locationText}>{props.continent}</h4>
-          <img className={s.population} src={image2} alt="location-icon" />
-          <h4 className={s.populationText}>Population: {props.population}</h4>
+          <h4 className={s.locationText}>
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className={s.locationIcon}
+            ></FontAwesomeIcon>
+            {props.continent}
+          </h4>
+          <h4 className={s.populationText}>
+            <FontAwesomeIcon
+              className={s.populationIcon}
+              icon={faPeopleGroup}
+            ></FontAwesomeIcon>
+            Population: {props.population}
+          </h4>
         </div>
         <div className={s.cardButton}>
           <button className={s.details}>

@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
         return {
           idName: element.cca3,
           name: element.name.common,
-          flagImg: element.flags[1],
+          flagImg: element.flags[0],
           continent: element.continents[0],
           capital: element.capital ? element.capital[0] : "Not found",
           subregion: element.subregion ? element.subregion : "Not Found",
@@ -56,7 +56,7 @@ router.get("/", async (req, res) => {
           );
           countryName.length
             ? res.status(200).send(countryName)
-            : res.status(404).send("No se encontro el pais");
+            : res.status(404).send("Country not found");
         } else {
           res.status(200).send(dbData);
         }

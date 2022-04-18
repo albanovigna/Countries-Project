@@ -14,6 +14,7 @@ function ShowCountries({ currentCountries }) {
             continent={country.continent}
             img={country.flagImg}
             population={country.population}
+            area={country.area}
           />
         );
       })}

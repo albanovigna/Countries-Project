@@ -102,6 +102,14 @@ function Activity() {
         (c) => c !== e.target.name
       ),
     });
+    setErrorsValue(
+      validateValue({
+        ...newActivity,
+        countriesInActivity: newActivity.countriesInActivity.filter(
+          (c) => c !== e.target.name
+        ),
+      })
+    );
     console.log(newActivity);
   };
 
@@ -134,13 +142,15 @@ function Activity() {
         src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
         alt=""
       />
+
       <Link className={s.linkHome} to="/countries">
         <button>Go to home page</button>
       </Link>
+
       <form className={s.form} onSubmit={(e) => handleSubmit(e)}>
-        <h2>New Activity</h2>
-        <label htmlFor="">Name:</label>
+        <h4 className={s.title}>New Activity</h4>
         <input
+          className={s.nameInput}
           type="text"
           name="name"
           value={newActivity.name}
@@ -205,7 +215,9 @@ function Activity() {
               );
               return (
                 <div>
-                  <li key={c.id}>{name}</li>
+                  <li className={s.countryLi} key={c.id}>
+                    {name}
+                  </li>
                   <button
                     name={c}
                     className={s.closeBtn}

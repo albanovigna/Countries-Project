@@ -1,29 +1,22 @@
-
-.container{
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  min-height: 100vh;
-  padding: 10px;
+  position: relative;
 }
 
-
-.paginationUl{
+.paginationUl {
   display: flex;
   position: absolute;
   background: #fff;
-   padding: 8px;
+  padding: 8px;
   border-radius: 50px;
-  bottom: 45%;
   height: 45px;
+  top: 200%;
 }
 
-.paginationUl li{
-  color: #20B2AA;
+.paginationUl li {
+  color: #20b2aa;
   list-style: none;
   line-height: 45px;
   text-align: center;
@@ -31,69 +24,60 @@
   font-weight: 500;
   cursor: pointer;
   margin: 0px 10px 0 10px;
-  /* user-select: none; 
-  transition: all 0.3s ease; */
 }
 
-.paginationUl li.numb{
+.paginationUl li.numb {
   list-style: none;
   height: 45px;
   width: 45px;
   margin: 0 5px;
-  line-height: 45px; 
+  line-height: 45px;
   border-radius: 50%;
 }
 
-.paginationUl li.first{
+.paginationUl li.first {
   margin: 0px 3px 0 -5px;
   height: 45px;
   width: 45px;
   border-radius: 50%;
 }
 
-.paginationUl li.last{
+.paginationUl li.last {
   margin: 0px -5px 0 3px;
   height: 45px;
   width: 45px;
   border-radius: 50%;
 }
 
-.paginationUl li.dots{
+.paginationUl li.dots {
   font-size: 22px;
   cursor: default;
   margin: 0px 5px 0 3px;
 }
 
-.paginationUl li button.buttonPrev{
-	color: inherit;
-	border: none;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.paginationUl li button.buttonPrev {
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   padding: 0 20px;
   border-radius: 25px 5px 5px 25px;
   width: 90px;
   height: 45px;
 }
 
-/* .paginationUl li button h4{
-  position: relative;
-  bottom:70px;
-  left: 30px;
-} */
-
-.paginationUl li button.buttonNext{
-	color: inherit;
-	border: none;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.paginationUl li button.buttonNext {
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   padding: 0 20px;
   border-radius: 5px 25px 25px 5px;
   width: 90px;
   height: 45px;
 }
-
 
 .paginationUl li.active {
   background-color: white;
@@ -108,7 +92,69 @@
 .paginationUl li button.buttonPrev:hover,
 .paginationUl li button.buttonNext:hover,
 .paginationUl li.first:hover,
-.paginationUl li.last:hover{
+.paginationUl li.last:hover {
   color: #fff;
-  background: #20B2AA;
+  background: #20b2aa;
+}
+
+@media (max-width: 724px) {
+  .container {
+    width: 100%;
+  }
+  .paginationUl {
+    position: relative;
+  }
+
+  .paginationUl li.numb {
+    display: none;
+  }
+
+  .paginationUl li.dots {
+    display: none;
+  }
+
+  .paginationUl li button.buttonPrev {
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0 20px;
+    border-radius: 25px 5px 5px 25px;
+    width: 60px;
+    height: 45px;
+  }
+
+  .paginationUl li button.buttonNext {
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0 20px;
+    border-radius: 5px 25px 25px 5px;
+    width: 60px;
+    height: 45px;
+  }
+  .paginationUl li button.buttonPrev i,
+  .paginationUl li button.buttonNext i {
+    display: none;
+  }
+
+  .paginationUl li.active {
+    background-color: white;
+    color: #20b2aa;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+  }
+  .paginationUl li.active,
+  .paginationUl li.numb:hover,
+  .paginationUl li button.buttonPrev:hover,
+  .paginationUl li button.buttonNext:hover,
+  .paginationUl li.first:hover,
+  .paginationUl li.last:hover {
+    color: #fff;
+    background: #20b2aa;
+  }
 }

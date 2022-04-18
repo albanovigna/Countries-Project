@@ -30,7 +30,7 @@ function SearchBar({ setCurrentPage }) {
 
   return (
     <div className={s.container}>
-      <form className={s.searchBar} onSubmit={(e) => handleSubmit(e)}>
+      <div className={s.searchBar} onSubmit={(e) => handleSubmit(e)}>
         <input
           className={s.searchInput}
           onChange={(e) => handleChange(e)}
@@ -45,7 +45,7 @@ function SearchBar({ setCurrentPage }) {
         >
           <img src={image} alt="search-icon" />
         </button>
-      </form>
+      </div>
       <button className={s.resetButton} onClick={(e) => handleReset(e)}>
         X
       </button>

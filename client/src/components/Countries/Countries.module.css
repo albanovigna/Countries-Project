@@ -1,22 +1,26 @@
 .container {
   box-sizing: content-box;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-  .backImage{
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+.backImage {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
-  .navContainer{
-    position: absolute;
-    width: 100%;
-    background-color: red;
-  }
+.navContainer {
+  position: relative;
+  width: 100%;
+}
 
 .filtersContainer {
   position: relative;
@@ -24,18 +28,41 @@
   justify-content: center;
   align-items: center;
   top: 20vh;
+  z-index: -1;
 }
 
-.countriesContainer{
+.countriesContainer {
+  position: relative;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
-.secondPagination{
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+.secondPagination {
   position: relative;
-  top: 25vh;
+  min-height: 20vh;
+  top: 10vh;
+}
+
+.loadingContainer {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+@media (max-width: 724px) {
+  .navContainer {
+    z-index: 1;
+  }
+
+  .filtersContainer {
+    z-index: -1;
+  }
+
+  .countriesContainer {
+    width: 100%;
+    height: 100%;
+  }
 }

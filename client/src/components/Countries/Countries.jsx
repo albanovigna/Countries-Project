@@ -34,7 +34,7 @@ function Countries() {
       dispatch(getCountries());
       dispatch(getActivities());
     }
-  }, [countries, activities]);
+  }, []);
 
   return (
     <div className={s.container}>

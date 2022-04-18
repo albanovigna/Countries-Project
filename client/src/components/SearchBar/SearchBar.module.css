@@ -2,9 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
-  position: relative;
-  left: 50px;
 }
 
 .searchBar {
@@ -43,12 +40,13 @@
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  background: #0A9396;
+  background: #0a9396;
   cursor: pointer;
+  z-index: 2;
 }
 
 .resetButton {
-  background-color: #AE2012; 
+  background-color: #ae2012;
   border: none;
   color: #fff;
   width: 150px;
@@ -62,5 +60,49 @@
 }
 
 .resetButton:hover {
-  background-color: #9B2226;
+  background-color: #9b2226;
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+    top: 5vh;
+  }
+  .searchBar {
+    width: 250px;
+    margin-left: 0px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .searchInput {
+    margin: 0 0.5rem 0 0.5rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+  }
+  .searchButton img {
+    width: 20px;
+  }
+  .searchButton {
+    position: relative;
+    border: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background: #0a9396;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .resetButton {
+    width: 10%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    position: relative;
+    top: -5vh;
+  }
 }

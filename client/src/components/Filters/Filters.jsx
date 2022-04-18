@@ -7,6 +7,7 @@ import {
   filterByActivity,
   getCountries,
 } from "../../actions/index";
+import SearchBar from "../SearchBar/SearchBar";
 import s from "../Filters/Filters.module.css";
 
 function Filters({ currentPage, setCurrentPage, setOrder }) {
@@ -22,7 +23,7 @@ function Filters({ currentPage, setCurrentPage, setOrder }) {
       dispatch(sortByPopulation(direction));
     }
     setCurrentPage(currentPage);
-    setOrder(`Order ${e.target.value}`);
+    setOrder(value);
   }
 
   function filteredByContinent(e) {
@@ -56,6 +57,10 @@ function Filters({ currentPage, setCurrentPage, setOrder }) {
 
   return (
     <div className={s.container}>
+      <SearchBar
+        className={s.searchBox}
+        setCurrentPage={setCurrentPage}
+      ></SearchBar>
       <div className={s.selectContainer}>
         <select className={s.sort} onChange={(e) => sortByInput(e)}>
           <option selected disabled>
@@ -98,7 +103,9 @@ function Filters({ currentPage, setCurrentPage, setOrder }) {
           })}
         </select>
       </div>
-      <button onClick={(e) => handleOnClick(e)}>Reset All Countries</button>
+      <button className={s.filterButton} onClick={(e) => handleOnClick(e)}>
+        Reset All Countries
+      </button>
     </div>
   );
 }

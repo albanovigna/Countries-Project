@@ -20,7 +20,6 @@
   z-index: 10000;
 }
 
-
 .light {
   width: 10px;
   height: 10px;
@@ -95,5 +94,61 @@
 .button:hover {
   background-color: white;
   cursor: pointer;
-  color: #0A9396;
+  color: #0a9396;
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: red;
+    background-image: url("https://i.pinimg.com/originals/20/cb/f3/20cbf31ecf279ccab1a3264a2cec80c6.jpg");
+    background-repeat: no-repeat;
+    background-size: 170vw 100vh;
+    background-position: bottom;
+  }
+  .img {
+    width: 0;
+    height: 0;
+  }
+  .textContainer h2 {
+    font-size: 1.8rem;
+  }
+  .cloud {
+    top: -75px;
+  }
+  .button {
+    bottom: 20%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: red;
+    background-image: url("https://i.pinimg.com/originals/20/cb/f3/20cbf31ecf279ccab1a3264a2cec80c6.jpg");
+    background-repeat: no-repeat;
+    background-size: 170vw 100vh;
+    background-position: bottom;
+  }
+  .img {
+    width: 0;
+    height: 0;
+  }
+  .textContainer h2 {
+    font-size: 3rem;
+  }
+  .cloud {
+    top: 0px;
+  }
+  .button {
+    bottom: 20%;
+    font-size: 1.5rem;
+  }
 }

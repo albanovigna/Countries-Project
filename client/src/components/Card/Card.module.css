@@ -1,77 +1,98 @@
-.container{
+.container {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
   border-radius: 10px;
   overflow: hidden;
-  width: 350px;
-  height: 50vh;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 600px;
+  margin-bottom: 50px;
   color: rgb(43, 42, 42);
   transition: 0.5s;
   justify-self: center;
 }
 
-.container:hover{
+.container:hover {
   transform: scale(1.1);
   box-shadow: 0px 0px 15px -5px;
 }
 
-.flag{
+.flag {
   width: 100%;
-  height: 200px;
+  max-height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 0px;
   object-fit: cover;
 }
 
-.cardContent hr{
-  width:80%;
-  margin:0 auto;
+.cardContent hr {
+  width: 80%;
+  margin: 0 auto;
   border: solid 1px dimgrey;
-  
 }
 
-.mainInfo{
+.mainInfo {
   position: relative;
-  height: 6vh;
+  height: 35vh;
 }
-.mainInfo h4{
+.mainInfo h4 {
+  position: relative;
+  top: 85%;
   font-size: 1.2rem;
 }
 
-.otherInfo{
+.otherInfo {
+  width: 100%;
   position: relative;
-  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  top: 10%;
   margin-bottom: 5px;
 }
 
-.location{
-  position: relative;
-  width: 30px;
-  right: 30%;
-  top:25px;
-}
-
-.population{
+.population {
   position: relative;
   width: 30px;
   right: 30%;
 }
+.locationIcon {
+  width: 25px;
+  height: 25px;
+  padding-right: 5px;
+}
 
-.locationText{
+.locationText {
+  width: 100%;
   position: relative;
   bottom: 20px;
   font-weight: 400;
 }
 
-.populationText{
+.populationIcon {
+  width: 25px;
+  height: 20px;
+  margin-top: 5vh;
+  padding-right: 5px;
+}
+.populationText {
+  align-self: center;
+  width: 100%;
   position: relative;
   bottom: 50px;
   font-weight: 400;
 }
 
-
 .cardButton {
   position: relative;
-  bottom: 1vh;
+  top: 2vh;
 }
 
 .details {
@@ -83,14 +104,13 @@
   cursor: pointer;
   outline: none;
   border: 0;
-  bottom:55px;
+  bottom: 55px;
   vertical-align: middle;
   text-decoration: none;
   background: transparent;
   padding: 0;
   font-size: inherit;
   font-family: inherit;
-  
 }
 
 .details .circle {
@@ -100,7 +120,7 @@
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #20B2AA;
+  background: #20b2aa;
   border-radius: 1.625rem;
 }
 
@@ -172,4 +192,220 @@
   transform: translateY(0px);
   transition-delay: 0s;
   opacity: 1;
-} 
+}
+
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 250px;
+    height: 500px;
+  }
+  .flag {
+    width: 100%;
+    max-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 0px;
+    object-fit: cover;
+  }
+  .cardContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardContent hr {
+    position: relative;
+    top: 5%;
+  }
+  .mainInfo {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .mainInfo h4 {
+    position: relative;
+    bottom: 20%;
+  }
+
+  .otherInfo {
+    top: 0%;
+  }
+
+  .locationText {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    font-weight: 400;
+    margin-bottom: 0px;
+  }
+
+  .populationText {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    margin-top: 0px;
+    font-weight: 400;
+  }
+  .cardButton {
+    position: relative;
+    margin-top: 10px;
+    top: 5vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 400px;
+    height: 500px;
+  }
+  .flag {
+    width: 100%;
+    max-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 0px;
+    object-fit: cover;
+  }
+  .cardContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardContent hr {
+    position: relative;
+    top: 10%;
+  }
+
+  .mainInfo {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainInfo h4 {
+    position: relative;
+  }
+
+  .otherInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+  }
+
+  .locationIcon {
+    padding-right: 10px;
+  }
+  .locationText {
+    position: relative;
+    left: 0px;
+    font-weight: 400;
+  }
+
+  .populationText {
+    position: relative;
+    margin-top: 0px;
+    left: 0px;
+    font-weight: 400;
+  }
+  .cardButton {
+    position: relative;
+    top: 3vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 400px;
+    height: 500px;
+  }
+  .flag {
+    width: 100%;
+    max-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 0px;
+    object-fit: cover;
+  }
+  .cardContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardContent hr {
+    position: relative;
+    top: 10%;
+  }
+
+  .mainInfo {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainInfo h4 {
+    position: relative;
+  }
+
+  .otherInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+  }
+
+  .locationIcon {
+    padding-right: 10px;
+  }
+  .locationText {
+    position: relative;
+    left: 0px;
+    font-weight: 400;
+    margin-bottom: 0px;
+  }
+
+  .populationText {
+    position: relative;
+    margin-top: 0px;
+    left: 0px;
+    font-weight: 400;
+  }
+  .cardButton {
+    position: relative;
+    top: 3vh;
+  }
+}
