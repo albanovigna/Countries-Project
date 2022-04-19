@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.2.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
     "enzyme": "^3.11.0",
     "font-awesome": "^4.7.0",
     "is-react": "^1.5.4",

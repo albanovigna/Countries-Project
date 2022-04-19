@@ -13,37 +13,35 @@ export const REMOVE_DETAIL = "REMOVE_DETAIL";
 
 export const getCountries = () => {
   return async (dispatch) => {
-    const json = await axios.get("http://localhost:3001/countries");
+    const json = await axios.get("/countries");
     dispatch({ type: GET_COUNTRIES, payload: json.data });
   };
 };
 
 export const getCountriesByName = (name) => {
   return async (dispatch) => {
-    const json = await axios.get(
-      "http://localhost:3001/countries?name=" + name
-    );
+    const json = await axios.get("/countries?name=" + name);
     dispatch({ type: GET_COUNTRIES_BY_NAME, payload: json.data });
   };
 };
 
 export const getCountriesById = (id) => {
   return async (dispatch) => {
-    const json = await axios.get("http://localhost:3001/countries/" + id);
+    const json = await axios.get("/countries/" + id);
     dispatch({ type: GET_COUNTRIES_BY_ID, payload: json.data });
   };
 };
 
 export const getActivities = () => {
   return async (dispatch) => {
-    const json = await axios.get("http://localhost:3001/activity");
+    const json = await axios.get("/activity");
     dispatch({ type: GET_ACTIVITIES, payload: json.data });
   };
 };
 
 export const createActivity = (payload) => {
   return async function () {
-    const res = await axios.post(`http://localhost:3001/activity`, payload);
+    const res = await axios.post(`/activity`, payload);
     return res;
   };
 };
