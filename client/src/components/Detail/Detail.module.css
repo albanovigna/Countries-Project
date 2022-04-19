@@ -230,23 +230,89 @@ button:focus {
   left: 50%;
 }
 
-/* MOBILE */
+/* SMALL MOBILE */
 
-@media (max-width: 767px) {
+@media (max-width: 359px) {
   .container {
     width: 90%;
-    height: 80%;
+    max-height: 450px;
+    margin-bottom: 0px;
   }
   .flag {
     width: 80%;
     max-height: 150px;
   }
   .countryLocation {
-    top: 2vh;
+    top: 0vh;
   }
 
   .geography {
-    top: 2vh;
+    top: 0vh;
+  }
+  .front h2 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .front h3 {
+    font-size: 1rem;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .front h4 {
+    font-size: 0.8rem;
+    margin: 0 0 15px 0;
+    display: block;
+  }
+  .front h5 {
+    font-size: 0.7rem;
+    margin: 0 0 15px 0;
+    display: block;
+  }
+
+  .viewCountryText p {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.7rem;
+    border-bottom: #ee9b00 2px solid 80%;
+    color: #000;
+  }
+  .activities {
+    width: 100%;
+  }
+  .back ul li {
+    width: 100%;
+    font-size: 1.2rem;
+    display: inline;
+    position: relative;
+    right: 10%;
+  }
+  .linkHome button {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+}
+
+/* MOBILE */
+
+@media (min-width: 360px) and (max-width: 767px) {
+  /* @media (max-width: 767px) { */
+  .container {
+    width: 90%;
+    max-height: 550px;
+    margin-bottom: 0px;
+  }
+  .flag {
+    width: 80%;
+    max-height: 150px;
+  }
+  .countryLocation {
+    top: 0vh;
+  }
+
+  .geography {
+    top: 0vh;
   }
   .front h2 {
     font-size: 1.8rem;
@@ -268,10 +334,11 @@ button:focus {
     margin: 0 0 15px 0;
     display: block;
   }
-  .front p {
-    position: relative;
+
+  .viewCountryText p {
+    position: absolute;
     width: 100%;
-    top: 35%;
+    bottom: 0;
     font-size: 1rem;
     color: #000;
   }

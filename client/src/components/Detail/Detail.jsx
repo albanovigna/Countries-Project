@@ -52,7 +52,9 @@ function Detail() {
                   <h4>Population:</h4>
                   <h5>{detail[0].population}</h5>
                 </div>
-                <p>Click for view country activities!</p>
+                <div className={s.viewCountryText}>
+                  <p>Click for view country activities!</p>
+                </div>
               </div>
               <div className={s.back}>
                 <div className={s.activities}>
