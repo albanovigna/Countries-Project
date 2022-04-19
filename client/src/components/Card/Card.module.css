@@ -31,9 +31,9 @@
 }
 
 .cardContent hr {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  border: solid 1px dimgrey;
+  border: solid 1px rgba(255, 255, 255/ 20%);
 }
 
 .mainInfo {
@@ -42,8 +42,8 @@
 }
 .mainInfo h4 {
   position: relative;
-  top: 85%;
-  font-size: 1.2rem;
+  /* top: 85%; */
+  font-size: 1.8rem;
 }
 
 .otherInfo {
@@ -305,6 +305,7 @@
   }
   .mainInfo h4 {
     position: relative;
+    top: -15px;
   }
 
   .otherInfo {
@@ -378,6 +379,7 @@
   }
   .mainInfo h4 {
     position: relative;
+    top: -20px;
   }
 
   .otherInfo {

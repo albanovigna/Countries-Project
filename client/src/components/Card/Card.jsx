@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from "./placeholder.png";
-import image2 from "./team.png";
 import s from "./Card.module.css";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

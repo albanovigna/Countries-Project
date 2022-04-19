@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getActivities, getCountries, createActivity } from "../../actions";
 import { Link } from "react-router-dom";
 import s from "../Activity/Activity.module.css";
+import Swal from "sweetalert2";
 
 function Activity() {
   const dispatch = useDispatch();
@@ -52,7 +53,11 @@ function Activity() {
     if (
       Object.values(newActivity.countriesInActivity).includes(e.target.value)
     ) {
-      alert(`el pais ${countryName} ya ha sido ingresado`);
+      Swal.fire({
+        icon: "warning",
+        title: `The country ${countryName} are already selected`,
+        text: "Please, select other country",
+      });
     } else {
       setNewActivity({
         ...newActivity,
@@ -81,7 +86,10 @@ function Activity() {
     if (Object.values(errors).length === 0) {
       console.log(newActivity);
       dispatch(createActivity(newActivity));
-      alert("Activity added correctly!");
+      Swal.fire({
+        icon: "success",
+        title: "Activity added correctly!",
+      });
       setNewActivity({
         name: "",
         difficulty: "",
@@ -206,32 +214,34 @@ function Activity() {
             );
           })}
         </select>
-        <div className={s.containerCountries}>
-          <p>Selected Countries</p>
-          <ul className={s.listCountries}>
-            {newActivity.countriesInActivity.map((c) => {
-              let name = allCountries.map((country) =>
-                country.idName === c ? country.name : null
-              );
-              return (
-                <div>
-                  <li className={s.countryLi} key={c.id}>
-                    {name}
-                  </li>
-                  <button
-                    name={c}
-                    className={s.closeBtn}
-                    onClick={(e) => {
-                      removeCountry(e);
-                    }}
-                  >
-                    ❌
-                  </button>
-                </div>
-              );
-            })}
-          </ul>
-        </div>
+        {newActivity.countriesInActivity.length > 0 && (
+          <div className={s.containerCountries}>
+            <p>Selected Countries</p>
+            <ul className={s.listCountries}>
+              {newActivity.countriesInActivity.map((c) => {
+                let name = allCountries.map((country) =>
+                  country.idName === c ? country.name : null
+                );
+                return (
+                  <div>
+                    <li className={s.countryLi} key={c.id}>
+                      <button
+                        name={c}
+                        className={s.closeBtn}
+                        onClick={(e) => {
+                          removeCountry(e);
+                        }}
+                      >
+                        ❌
+                      </button>{" "}
+                      {name}
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
+        )}
         {errorsValue.countriesInActivity && (
           <p className={s.error}>{errorsValue.countriesInActivity}</p>
         )}
