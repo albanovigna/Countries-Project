@@ -55,7 +55,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
-  color: rgb(43, 42, 42);
+  /* color: rgb(43, 42, 42); */
 }
 
 .flipBox .back {
@@ -73,9 +73,30 @@
   transform: rotateX(180deg);
 }
 
+.flagCont {
+  width: 100%;
+}
 .flag {
   width: auto;
   max-height: 200px;
+  margin-bottom: 0px;
+}
+
+.infoContainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  bottom: 10vh;
+}
+.front {
+  color: #fff;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
 }
 
 .front h2 {
@@ -83,31 +104,83 @@
   margin: 0;
 }
 
-.front h3 {
-  font-size: 18px;
-  margin: 12px 0 12px 0;
-}
-
 .front h4 {
   font-size: 1.2rem;
   margin-bottom: 0;
   display: block;
+  font-weight: 200;
 }
 .front h5 {
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 15px;
   display: block;
+  font-weight: 200;
 }
 .countryLocation {
   position: relative;
+  height: 100%;
   width: 30%;
   float: left;
   left: 5%;
 }
 
+.googleMap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.googleMap a {
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  transition: 0.5s;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.locationIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.buttonMap {
+  background-color: #20b2aa;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  /* transition: 0.5s; */
+}
+
+.buttonMap:hover {
+  /* background-color: #2a9d8f; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, -3px, 0);
+}
+
+.buttonMap h5 {
+  font-family: "Oswald";
+}
+
+.googleMap a:hover {
+  transform: scale(1.2);
+}
 .geography {
   position: relative;
+  height: 100%;
   width: 30%;
   float: right;
   right: 5%;
@@ -119,7 +192,8 @@
   left: 0;
   right: 0;
   font-size: 1.5rem;
-  color: #000;
+  color: rgb(20, 20, 20);
+  text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white, 0 0 0.5px white;
 }
 
 .back {
@@ -130,12 +204,13 @@
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   backdrop-filter: blur(14px);
-  color: rgb(43, 42, 42);
 }
 
 .back ul li {
   display: inline;
   margin: 5px;
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
 }
 
 .back .noCountryContainer {
@@ -161,12 +236,11 @@
   position: relative;
   top: 15px;
   appearance: button;
-  background-color: #ca6702;
+  background-color: #005f73;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
   box-sizing: border-box;
-  color: #000;
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
@@ -188,9 +262,16 @@
   white-space: nowrap;
 }
 
+.linkHome button h5 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
 .linkHome button:after {
   background-clip: padding-box;
-  background-color: #ee9b00;
+  background-color: #20b2aa;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -232,7 +313,7 @@ button:focus {
 
 /* SMALL MOBILE */
 
-@media (max-width: 359px) {
+@media (max-width: 360px) {
   .container {
     width: 90%;
     max-height: 450px;
@@ -242,12 +323,36 @@ button:focus {
     width: 80%;
     max-height: 150px;
   }
+  .infoContainer {
+    bottom: 15vh;
+  }
   .countryLocation {
-    top: 0vh;
+    position: relative;
+  }
+
+  .locationIcon {
+    width: 15px;
+    height: 30px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  .googleMap {
+    height: 100%;
+  }
+
+  .googleMap a {
+    font-size: 0.8rem;
   }
 
   .geography {
-    top: 0vh;
+    position: relative;
   }
   .front h2 {
     font-size: 1.8rem;
@@ -260,30 +365,31 @@ button:focus {
   }
 
   .front h4 {
-    font-size: 0.8rem;
-    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    margin: 0 0 5px 0;
     display: block;
   }
   .front h5 {
-    font-size: 0.7rem;
-    margin: 0 0 15px 0;
+    font-size: 0.8rem;
+    margin: 0 0 5px 0;
     display: block;
+  }
+  .googleMap h5 {
+    font-size: 0.6rem;
   }
 
   .viewCountryText p {
     position: absolute;
     width: 100%;
     bottom: 0;
-    font-size: 0.7rem;
-    border-bottom: #ee9b00 2px solid 80%;
-    color: #000;
+    font-size: 1.2rem;
   }
   .activities {
     width: 100%;
   }
   .back ul li {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     display: inline;
     position: relative;
     right: 10%;
@@ -299,7 +405,7 @@ button:focus {
 @media (min-width: 360px) and (max-width: 767px) {
   /* @media (max-width: 767px) { */
   .container {
-    width: 90%;
+    width: 80%;
     max-height: 550px;
     margin-bottom: 0px;
   }
@@ -307,12 +413,37 @@ button:focus {
     width: 80%;
     max-height: 150px;
   }
+
+  .infoContainer {
+    position: absolute;
+    bottom: 10vh;
+  }
   .countryLocation {
-    top: 0vh;
+    position: relative;
+  }
+
+  .locationIcon {
+    width: 15px;
+    height: 30px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+  }
+  .googleMap {
+    height: 100%;
+  }
+  .googleMap a {
+    font-size: 1rem;
+    font-weight: 200;
   }
 
   .geography {
-    top: 0vh;
+    position: relative;
   }
   .front h2 {
     font-size: 1.8rem;
@@ -321,7 +452,7 @@ button:focus {
 
   .front h3 {
     font-size: 1rem;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 20px 0px;
   }
 
   .front h4 {
@@ -339,18 +470,103 @@ button:focus {
     position: absolute;
     width: 100%;
     bottom: 0;
-    font-size: 1rem;
-    color: #000;
+    font-size: 1.2rem;
   }
   .activities {
     width: 100%;
   }
   .back ul li {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     display: inline;
     position: relative;
     right: 10%;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .container {
+    width: 90%;
+    max-height: 90%;
+    margin-bottom: 0px;
+  }
+  .flag {
+    width: 10%;
+    max-height: 150px;
+  }
+
+  .infoContainer {
+    position: absolute;
+    bottom: 10vh;
+  }
+  .countryLocation {
+    position: relative;
+  }
+  .locationIcon {
+    width: 15px;
+    height: 30px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+  }
+
+  .googleMap {
+    height: 100%;
+    top: 5vh;
+  }
+  .googleMap a {
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+
+  .geography {
+    position: relative;
+  }
+  .front h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .front h3 {
+    font-size: 1rem;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .front h4 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    display: block;
+  }
+  .front h5 {
+    font-size: 0.9rem;
+    margin: 0 0 5px 0;
+    display: block;
+  }
+
+  .viewCountryText p {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.8rem;
+  }
+  .activities {
+    width: 100%;
+  }
+  .back ul li {
+    width: 100%;
+    font-size: 0.9rem;
+    display: inline;
+    position: relative;
+    right: 5%;
+  }
+  .linkHome button {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
   }
 }
 
@@ -359,21 +575,108 @@ button:focus {
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     width: 80%;
-    height: 70%;
+    height: 80%;
     display: flex;
     flex-direction: column;
   }
 
   .flag {
-    width: 80%;
+    width: 40%;
     max-height: 250px;
   }
-  .countryLocation {
-    right: 0px;
-    top: 0vh;
+  .infoContainer {
+    position: absolute;
+    bottom: 10vh;
   }
-  .geography {
-    top: 0vh;
+  .locationIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .googleMap a {
+    font-size: 1.7rem;
+  }
+
+  .front h4 {
+    font-size: 1.8rem;
+  }
+
+  .front h5 {
+    font-size: 1.7rem;
+  }
+  .googleMap h5 {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flag {
+    width: 15%;
+    max-height: 100px;
+  }
+  .infoContainer {
+    position: absolute;
+    bottom: 5vh;
+  }
+  .locationIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+  }
+  .googleMap {
+    top: 5vh;
+  }
+  .googleMap a {
+    font-size: 0.7rem;
+  }
+  .front h2 {
+    font-size: 1.4rem;
+  }
+  .front h3 {
+    font-size: 0.8rem;
+  }
+
+  .front h4 {
+    font-size: 1.1rem;
+  }
+
+  .front h5 {
+    font-size: 1rem;
+  }
+  .googleMap h5 {
+    font-size: 0.8rem;
+  }
+  .viewCountryText p {
+    font-size: 1rem;
+  }
+  .back ul li {
+    width: 100%;
+    font-size: 1rem;
+    display: inline;
+    position: relative;
+    right: 5%;
   }
 }
 
@@ -385,21 +688,58 @@ button:focus {
     flex-direction: column;
   }
 
-  .flag {
-    width: 40%;
-    max-height: 250px;
+  .flagCont {
+    position: absolute;
+    width: 100%;
+    /* background-color: #ca6702; */
+    z-index: 5;
   }
+  .flag {
+    width: 35%;
+    max-height: 150px;
+    margin-bottom: 0px;
+  }
+
+  .infoContainer {
+    margin-bottom: 0px;
+    margin-top: 0;
+    height: auto;
+    bottom: 15vh;
+    align-items: baseline;
+  }
+
   .countryLocation {
-    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right: 0px;
     top: 0vh;
+    margin-bottom: 0px;
   }
+
+  .locationIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .buttonMap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  .googleMap {
+    height: 100%;
+  }
+
+  .googleMap a {
+    bottom: 20vh;
+    font-size: 1.5rem;
+  }
+
   .geography {
-    height: 60%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -412,12 +752,97 @@ button:focus {
 
   .front h3 {
     font-size: 1rem;
+    margin: 0px 0px 50px 0px;
   }
 
   .front h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .front h5 {
+    font-size: 1.7rem;
+  }
+
+  .googleMap h5 {
     font-size: 1.2rem;
+  }
+  .viewCountryText {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.9rem;
+    margin-top: 0px;
+  }
+  .viewCountryText p {
+    /* background-color: red; */
+    bottom: 3vh;
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flag {
+    width: 40%;
+    max-height: 250px;
+    margin-bottom: 0px;
+  }
+
+  .countryLocation {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    top: 0vh;
+    margin-bottom: 0px;
+  }
+
+  .googleMap {
+    bottom: 10vh;
+  }
+  .googleMap a {
+    font-size: 2.2rem;
+  }
+
+  .geography {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0vh;
+  }
+  .front h2 {
+    font-size: 3rem;
+  }
+
+  .front h3 {
+    font-size: 1.5rem;
+    margin: 0px 0px 50px 0px;
+  }
+
+  .front h4 {
+    font-size: 2.5rem;
+  }
+  .front h5 {
+    font-size: 2.2rem;
+  }
+  .viewCountryText {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: 0px;
+  }
+  .viewCountryText p {
+    bottom: 5vh;
+    margin-bottom: 0px;
+    font-size: 1.9rem;
   }
 }

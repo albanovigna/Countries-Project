@@ -33,6 +33,9 @@ function Countries() {
     if (!countries.length) {
       dispatch(getCountries());
       dispatch(getActivities());
+    } else {
+      dispatch(getCountries());
+      dispatch(getActivities());
     }
   }, []);
 

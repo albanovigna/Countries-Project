@@ -5,6 +5,9 @@ import { getCountriesById, removeDetail } from "../../actions";
 import { Link } from "react-router-dom";
 import s from "../Detail/Detail.module.css";
 import Spinner from "../Spinner/Spinner";
+import "font-awesome/css/font-awesome.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 function Detail() {
   const dispatch = useDispatch();
@@ -34,23 +37,40 @@ function Detail() {
             <div className={s.flipBox}>
               <div className={s.front}>
                 <h2>{detail[0].name}</h2>
-                <h4>Id: {detail[0].idName}</h4>
+                <h3>Id: {detail[0].idName}</h3>
                 <div className={s.flagCont}>
                   <img className={s.flag} src={detail[0].flagImg} alt="" />
                 </div>
-                <div className={s.countryLocation}>
-                  <h4>Location info</h4>
-                  <h4>Continent:</h4>
-                  <h5>{detail[0].continent}</h5>
-                  <h4>Capital:</h4>
-                  <h5>{detail[0].capital}</h5>
-                </div>
-                <div className={s.geography}>
-                  <h4>Geography info</h4>
-                  <h4>Area:</h4>
-                  <h5>{detail[0].area}km2</h5>
-                  <h4>Population:</h4>
-                  <h5>{detail[0].population}</h5>
+                <div className={s.infoContainer}>
+                  <div className={s.countryLocation}>
+                    <h4>Continent:</h4>
+                    <h5>{detail[0].continent}</h5>
+                    <h4>Capital:</h4>
+                    <h5>{detail[0].capital}</h5>
+                  </div>
+                  <div className={s.googleMap}>
+                    <button
+                      className={s.buttonMap}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(detail[0].mapLocation, "_blank");
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        className={s.locationIcon}
+                      ></FontAwesomeIcon>
+                      {/* <h5>View Location</h5> */}
+                    </button>
+                    <h5>View Location</h5>
+                  </div>
+                  <div className={s.geography}>
+                    {/* <h4>Geography info</h4> */}
+                    <h4>Area:</h4>
+                    <h5>{detail[0].area} km2</h5>
+                    <h4>Population:</h4>
+                    <h5>{detail[0].population}</h5>
+                  </div>
                 </div>
                 <div className={s.viewCountryText}>
                   <p>Click for view country activities!</p>
@@ -82,7 +102,9 @@ function Detail() {
               </div>
             </div>
             <Link className={s.linkHome} to="/countries">
-              <button>Go to home page</button>
+              <button>
+                <h5>Go to home page</h5>
+              </button>
             </Link>
           </label>
         ) : (

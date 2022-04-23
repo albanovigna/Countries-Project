@@ -20,7 +20,7 @@
   z-index: 10000;
 }
 
-.light {
+/* .light {
   width: 10px;
   height: 10px;
   background: red;
@@ -30,7 +30,7 @@
   z-index: 10;
   left: 20px;
   animation: light 800ms ease-in-out 0s infinite alternate;
-}
+} */
 
 .cloud {
   position: absolute;
@@ -40,6 +40,7 @@
   animation: cloud 10s linear 1s infinite reverse;
   z-index: 99;
 }
+
 @keyframes light {
   0% {
     opacity: 0;
@@ -117,11 +118,48 @@
     font-size: 1.8rem;
   }
   .cloud {
-    top: -75px;
+    top: 50px;
+  }
+  .planeImg {
+    width: 300px;
+  }
+  .light {
+    display: none;
   }
   .button {
     bottom: 20%;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: red;
+    background-image: url("https://i.pinimg.com/originals/20/cb/f3/20cbf31ecf279ccab1a3264a2cec80c6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: bottom;
+  }
+  .img {
+    width: 0;
+    height: 0;
+  }
+  .textContainer h2 {
+    font-size: 1.8rem;
+  }
+  .cloud {
+    top: 00px;
+  }
+  .planeImg {
+    width: 200px;
+  }
+  .button {
+    bottom: 15%;
+    font-size: 0.8rem;
   }
 }
 
@@ -145,10 +183,59 @@
     font-size: 3rem;
   }
   .cloud {
-    top: 0px;
+    top: 100px;
+  }
+  .planeImg {
+    width: 400px;
+  }
+  .light {
+    display: none;
   }
   .button {
     bottom: 20%;
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: red;
+    background-image: url("https://i.pinimg.com/originals/20/cb/f3/20cbf31ecf279ccab1a3264a2cec80c6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: bottom;
+  }
+  .img {
+    width: 0;
+    height: 0;
+  }
+  .textContainer h2 {
+    font-size: 1.5rem;
+  }
+  .cloud {
+    top: -30px;
+  }
+  .planeImg {
+    width: 250px;
+  }
+  .light {
+    display: none;
+  }
+  .button {
+    bottom: 15%;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) and (orientation: landscape) {
+  .cloud {
+    top: 50px;
+  }
+  .planeImg {
+    width: 350px;
   }
 }

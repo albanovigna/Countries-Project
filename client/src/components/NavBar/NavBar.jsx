@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import s from "../NavBar/NavBar.module.css";
-import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import "font-awesome/css/font-awesome.min.css";
@@ -42,7 +41,6 @@ function NavBar() {
                   Create Activity
                 </Link>
               </li>
-
               {/* <li className={s.items}>Contact</li> */}
             </ul>
           )}

@@ -23,7 +23,7 @@ function Activity() {
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivities());
-  }, [dispatch]);
+  }, []);
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -217,6 +217,7 @@ function Activity() {
         {newActivity.countriesInActivity.length > 0 && (
           <div className={s.containerCountries}>
             <p>Selected Countries</p>
+            <hr className={s.separateBar} />
             <ul className={s.listCountries}>
               {newActivity.countriesInActivity.map((c) => {
                 let name = allCountries.map((country) =>

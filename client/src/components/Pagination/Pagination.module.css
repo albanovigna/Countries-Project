@@ -158,3 +158,15 @@
     background: #20b2aa;
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .container {
+    margin-top: 15vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-top: 5vh;
+  }
+}

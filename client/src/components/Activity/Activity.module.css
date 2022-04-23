@@ -87,6 +87,10 @@ button:focus {
   left: 0;
 }
 
+.title {
+  color: #fff;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -135,6 +139,14 @@ button:focus {
 
 .containerCountries p {
   font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+
+.separateBar {
+  margin-top: 0;
+  width: 90%;
 }
 
 .listCountries {
@@ -279,7 +291,7 @@ button:focus {
     font-size: 1.2rem;
     margin-top: 0;
     color: rgb(211, 206, 206);
-    border-bottom: solid 2px black;
+    /* border-bottom: solid 2px black; */
   }
 
   .listCountries {
@@ -289,11 +301,87 @@ button:focus {
     list-style-type: none;
   }
 
-  /* .countryLi {
+  .submitFormBtn {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .error {
+    margin-left: 10%;
+    left: 5vw;
+    color: #ee9b00;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .linkHome {
+    top: 0;
+  }
+  .title {
+    /* background-color: red; */
+    position: absolute;
+    width: 100%;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    margin-top: 50px;
+  }
+  .form {
+    justify-content: flex-start;
+    align-items: flex-start;
+    left: 5%;
+  }
+  .nameInput {
+    width: 70%;
+    height: 10vh;
+    margin: 20px;
+    border-radius: 4px;
+    margin-top: 80px;
+  }
+  .select {
+    width: 70%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin: 5%;
+    cursor: pointer;
+  }
+  .containerCountries {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    margin-left: 70px;
+    color: rgb(12, 12, 12);
+    top: 80px;
+  }
+  .containerCountries p {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: rgb(211, 206, 206);
+  }
+
+  .listCountries {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .countryLi {
     float: right;
-    width: 80%;
+    width: 90%;
     margin-top: 0px;
-    right: 0;
     text-align: left;
   }
 
@@ -301,7 +389,8 @@ button:focus {
     float: left;
     width: 20%;
     text-align: center;
-  } */
+  }
+
   .submitFormBtn {
     position: absolute;
     top: 100%;
@@ -365,8 +454,95 @@ button:focus {
     position: relative;
     font-size: 1.2rem;
     margin-top: 0;
+    right: 0;
     color: rgb(211, 206, 206);
-    border-bottom: solid 2px black;
+  }
+
+  .listCountries {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .countryLi {
+    float: right;
+    width: 80%;
+    margin-top: 0px;
+    text-align: left;
+  }
+
+  .closeBtn {
+    float: left;
+    width: 20%;
+    text-align: center;
+  }
+  .submitFormBtn {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .error {
+    margin-left: 10%;
+    left: 5vw;
+    color: #ee9b00;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .linkHome {
+    top: 0;
+  }
+  .title {
+    position: absolute;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+  }
+  .form {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .nameInput {
+    width: 80%;
+    height: 5vh;
+    margin: 20px;
+    border-radius: 4px;
+    margin-top: 70px;
+  }
+  .select {
+    width: 80%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin: 5%;
+    cursor: pointer;
+  }
+  .containerCountries {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 60%;
+    left: 100%;
+    right: 500px;
+    top: 70px;
+    height: auto;
+  }
+  .containerCountries p {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 0;
+    right: 0;
+    color: rgb(211, 206, 206);
   }
 
   .listCountries {
@@ -455,15 +631,17 @@ button:focus {
 
   .countryLi {
     float: right;
-    width: 80%;
+    width: 95%;
     margin-top: 0px;
+    margin-left: 50px;
     text-align: left;
     font-size: 1.5rem;
   }
 
   .closeBtn {
     float: left;
-    width: 30%;
+    width: 15%;
+    right: 0;
     text-align: center;
   }
   .submitFormBtn {
