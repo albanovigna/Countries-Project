@@ -2,15 +2,53 @@ const { Router } = require("express");
 const router = Router();
 const { Country, Activity } = require("../db");
 const axios = require("axios");
+const { preLoadedActivities } = require("./data");
 
 const getCountriesFromDb = async () => {
   const infoDb = await Country.findAll({
     include: {
       model: Activity,
-      attibute: ["name"],
     },
   });
   return infoDb;
+};
+
+const getActivityData = async () => {
+  try {
+    const dbData = await Activity.findAll({
+      include: {
+        model: Country,
+      },
+    });
+    return dbData;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const chargeActivitiesData = async () => {
+  const dbData = await getActivityData();
+  if (dbData.length < 1) {
+    try {
+      for (let i = 0; i < preLoadedActivities.length; i++) {
+        const newActivity = await Activity.create({
+          name: preLoadedActivities[i].name,
+          difficulty: preLoadedActivities[i].difficulty,
+          duration: preLoadedActivities[i].duration,
+          season: preLoadedActivities[i].season,
+        });
+
+        preLoadedActivities[i].countriesInActivity.map(async (countryId) => {
+          const foundCountry = await Country.findAll({
+            where: { idName: countryId },
+          });
+          if (foundCountry) newActivity.addCountries(foundCountry);
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
 };
 
 router.get("/", async (req, res) => {
@@ -28,6 +66,7 @@ router.get("/", async (req, res) => {
           subregion: element.subregion ? element.subregion : "Not Found",
           area: Math.round(element.area),
           population: element.population,
+          mapLocation: element.maps.googleMaps,
         };
       });
       infoAPI.forEach(async (element) => {
@@ -41,11 +80,13 @@ router.get("/", async (req, res) => {
             subregion: element.subregion,
             area: element.area,
             population: element.population,
+            mapLocation: element.mapLocation,
           });
-        } catch {
-          console.log("Error");
+        } catch (e) {
+          console.log(e);
         }
       });
+      await chargeActivitiesData();
       res.status(200).send(dbData);
     } else {
       try {
