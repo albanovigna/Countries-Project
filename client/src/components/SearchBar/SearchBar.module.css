@@ -63,7 +63,7 @@
   background-color: #9b2226;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .container {
     position: relative;
     top: 5vh;
@@ -89,8 +89,8 @@
     position: relative;
     border: 0;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background: #0a9396;
     cursor: pointer;
     z-index: 2;

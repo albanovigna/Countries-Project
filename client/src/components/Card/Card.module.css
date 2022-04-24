@@ -570,7 +570,7 @@
   }
   .flag {
     width: 100%;
-    max-height: 300px;
+    height: 250px;
     position: absolute;
     top: 0;
     left: 0;
@@ -658,7 +658,7 @@
   }
   .flag {
     width: 100%;
-    max-height: 350px;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
@@ -675,7 +675,7 @@
   }
   .cardContent hr {
     position: relative;
-    top: 10%;
+    top: 20%;
   }
 
   .mainInfo {

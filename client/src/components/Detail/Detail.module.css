@@ -482,6 +482,10 @@ button:focus {
     position: relative;
     right: 10%;
   }
+  .linkHome button {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
