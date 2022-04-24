@@ -213,7 +213,7 @@
   }
   .flag {
     width: 100%;
-    max-height: 200px;
+    height: 150px;
     position: absolute;
     top: 0;
     left: 0;
@@ -303,7 +303,7 @@
   }
   .flag {
     width: 100%;
-    max-height: 200px;
+    height: 150px;
     position: absolute;
     top: 0;
     left: 0;
@@ -393,7 +393,7 @@
   }
   .flag {
     width: 100%;
-    max-height: 300px;
+    height: 250px;
     position: absolute;
     top: 0;
     left: 0;
