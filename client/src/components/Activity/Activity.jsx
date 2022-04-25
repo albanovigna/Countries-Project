@@ -10,6 +10,8 @@ function Activity() {
 
   const allCountries = useSelector((state) => state.countries);
 
+  const allActivities = useSelector((state) => state.activities);
+
   const [errorsValue, setErrorsValue] = useState({});
 
   const [newActivity, setNewActivity] = useState({
@@ -127,6 +129,13 @@ function Activity() {
       errors.name = "Name is required";
     } else if (!/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/.test(newActivity.name)) {
       errors.name = "Name is invalid. Only letters are allowed";
+    } else if (
+      allActivities.findIndex(
+        (element) =>
+          element.name.toLowerCase() === newActivity.name.toLowerCase()
+      ) !== -1
+    ) {
+      errors.name = "The activity already exists";
     }
     if (!newActivity.duration || newActivity.duration === "Duration") {
       errors.duration = "Duration is required";
