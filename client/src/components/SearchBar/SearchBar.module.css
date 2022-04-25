@@ -73,6 +73,7 @@
     margin-left: 0px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0px;
   }
   .searchInput {
     margin: 0 0.5rem 0 0.5rem;
@@ -155,7 +156,7 @@
     top: -5vh;
   }
   .searchBar {
-    height: 5vh;
+    height: 20px;
     margin-left: 0px;
     justify-content: space-between;
     align-items: center;

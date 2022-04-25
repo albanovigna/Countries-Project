@@ -586,7 +586,7 @@ button:focus {
 
   .flag {
     width: 40%;
-    max-height: 250px;
+    max-height: 200px;
   }
   .infoContainer {
     position: absolute;
@@ -621,21 +621,21 @@ button:focus {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) and (orientation: landscape) {
   .container {
     width: 70%;
     height: 90%;
     display: flex;
     flex-direction: column;
   }
-
   .flag {
     width: 15%;
     max-height: 100px;
   }
   .infoContainer {
-    position: absolute;
-    bottom: 5vh;
+    position: relative;
+    bottom: 5%;
+    margin-top: 0;
   }
   .locationIcon {
     width: 20px;
@@ -792,7 +792,7 @@ button:focus {
   }
 
   .flag {
-    width: 40%;
+    width: 30%;
     max-height: 250px;
     margin-bottom: 0px;
   }
@@ -809,7 +809,7 @@ button:focus {
   }
 
   .googleMap {
-    bottom: 10vh;
+    top: 10%;
   }
   .googleMap a {
     font-size: 2.2rem;
