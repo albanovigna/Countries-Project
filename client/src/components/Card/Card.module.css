@@ -470,7 +470,7 @@
     left: -2vh;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
   .container {
     display: flex;
     flex-direction: column;
@@ -498,7 +498,7 @@
   }
   .cardContent hr {
     position: relative;
-    top: 5%;
+    top: 10%;
   }
 
   .mainInfo {
@@ -508,18 +508,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 20%;
   }
   .mainInfo h4 {
     position: relative;
-    bottom: 10vh;
+    margin-bottom: 0px;
   }
 
   .otherInfo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    top: 5%;
+    top: 0%;
   }
 
   .locationText {
@@ -541,7 +542,7 @@
     position: relative;
     bottom: 0px;
     left: 0px;
-    margin-top: 5vh;
+    margin-top: 5%;
     font-weight: 400;
   }
 
@@ -553,8 +554,8 @@
   }
   .cardButton {
     position: relative;
-    top: 10vh;
-    margin-top: 5vh;
+    top: 15%;
+    margin-top: 5%;
     left: -2vh;
   }
 }
