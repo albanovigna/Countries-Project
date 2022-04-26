@@ -9,9 +9,8 @@
   place-content: center;
 }
 
-@media (min-width: 724px) {
+@media (min-width: 767px) {
   .countriesContainer {
-    /* position: relative; */
     display: grid;
     width: 100%;
     margin: 5%;

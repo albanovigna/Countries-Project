@@ -78,7 +78,7 @@
 }
 .flag {
   width: auto;
-  max-height: 200px;
+  max-height: auto;
   margin-bottom: 0px;
 }
 
@@ -92,7 +92,6 @@
   flex-wrap: wrap;
   margin-bottom: 0px;
   margin-top: 0px;
-  bottom: 10vh;
 }
 .front {
   color: #fff;
@@ -321,7 +320,8 @@ button:focus {
   }
   .flag {
     width: 80%;
-    max-height: 150px;
+    max-height: 75px;
+    margin-top: 5%;
   }
   .infoContainer {
     bottom: 15vh;
@@ -402,7 +402,7 @@ button:focus {
 
 /* MOBILE */
 
-@media (min-width: 360px) and (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 768px) {
   /* @media (max-width: 767px) { */
   .container {
     width: 80%;
@@ -410,8 +410,8 @@ button:focus {
     margin-bottom: 0px;
   }
   .flag {
-    width: 80%;
-    max-height: 150px;
+    width: 50%;
+    max-height: 100px;
   }
 
   .infoContainer {
@@ -576,21 +576,24 @@ button:focus {
 
 /* TABLET */
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .container {
     width: 80%;
-    height: 80%;
+    height: 60%;
     display: flex;
     flex-direction: column;
   }
-
+  .flagCont {
+    width: 100%;
+    padding-top: 0%;
+  }
   .flag {
-    width: 40%;
-    max-height: 200px;
+    width: 50%;
+    max-height: 150px;
   }
   .infoContainer {
     position: absolute;
-    bottom: 10vh;
+    bottom: 20%;
   }
   .locationIcon {
     width: 30px;
@@ -603,6 +606,9 @@ button:focus {
     align-items: center;
     width: 50px;
     height: 50px;
+  }
+  .googleMap {
+    top: 25%;
   }
 
   .googleMap a {

@@ -60,12 +60,10 @@ function Detail() {
                         icon={faLocationDot}
                         className={s.locationIcon}
                       ></FontAwesomeIcon>
-                      {/* <h5>View Location</h5> */}
                     </button>
                     <h5>View Location</h5>
                   </div>
                   <div className={s.geography}>
-                    {/* <h4>Geography info</h4> */}
                     <h4>Area:</h4>
                     <h5>{detail[0].area} km2</h5>
                     <h4>Population:</h4>
